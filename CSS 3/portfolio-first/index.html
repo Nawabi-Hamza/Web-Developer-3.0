@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Nomalize.css">
+    <link rel="stylesheet" href="./Styles.css">
+    <title>Nawabi | Portfolio</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#aboutme">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="container">
+            <img src="./WhatsApp Image 2023-06-07 at 09.46.11_412c7f87.jpg" alt="">
+            <h1>Hi! I am Hamza Nawabi , I am Full Stack Web Developer</h1>
+        </div>
+    </section>
+
+    <section id="aboutme" class="aboutme">
+        <h2>About Me</h2>
+        <div class="aboutme-section">
+            <div class="aboutme-image"></div>
+            <div class="aboutme-text">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat necessitatibus distinctio aliquid fugit ex saepe. Sit nesciunt cumque fuga itaque quia corrupti in neque. Harum ipsa voluptatem mollitia doloremque ex.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat necessitatibus distinctio aliquid fugit ex saepe. Sit nesciunt cumque fuga itaque quia corrupti in neque. Harum ipsa voluptatem mollitia doloremque ex.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat necessitatibus distinctio aliquid fugit ex saepe. Sit nesciunt cumque fuga itaque quia corrupti in neque. Harum ipsa voluptatem mollitia doloremque ex.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="bbc-project">
+                <div class="text">
+                    <h3 class="project-name">BBC Clone</h3>
+                    <div class="content">
+                        <p>A HTML project about some facts about the earth.</p>
+                    </div>
+                    <a href="asdfasf" class="button">View Project</a>
+                </div>
+            </div>
+            <div class="earth-project">
+                <div class="text">
+                    <h3 class="project-name">Earth Facts</h3>
+                    <div class="content">
+                        <p>A HTML project about some facts about the earth.</p>
+                    </div>
+                    <a href="asdfasf" class="button">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script>
+        document.addEventListener("scroll",(e)=>{
+            const nav = document.querySelector("nav")
+            if(window.scrollY > 100){
+                nav.style.backgroundColor = "#48c9b0";
+            }else{
+                nav.style.backgroundColor = "inherit";
+            }
+            
+        })
+    </script>
+</body>
+</html>

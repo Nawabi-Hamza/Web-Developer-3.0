@@ -1,0 +1,170 @@
+body{
+    background: linear-gradient(to bottom,#48c9b0,#333);
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 10em;
+}
+
+/* Start Navbar Section */
+
+nav{
+    display: flex;
+    /* background-color: #48c9b0; */
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    list-style-type: none;
+}
+nav ul li a{
+    font-size: 16px;
+    padding: 0 1em;
+    color: white;
+    transition: .3s;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    color: #333;
+    text-decoration: underline;
+}
+
+/* END Navbar Section */
+
+/* Start Hero Section */
+
+.container{
+    position: relative;
+    /* width: 100%; */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+.hero{
+    padding-top: 130px;
+}
+.hero img{
+    border-style: none;
+    border-radius: 50%;
+    margin: 0 auto;
+    max-width: 440px;
+    width: 90%;
+    display: block;
+    border: 1em solid #e6e6e6;
+}
+.hero h1{
+    color: black;
+    text-align: center;
+    font-size: 24px;
+    margin: 30px 0px 100px;
+}
+
+/* END Hero Section */
+/* Start About ME Section */
+
+.aboutme{
+    width: 80%;
+    max-width: 1100px;
+    height: auto;
+    background-color: white;
+    text-align: center;
+    padding: 40px 50px 70px;
+    margin:0 auto;
+    box-shadow: 10px 10px 0px rgb(0 0 0 /40%) , -10px -10px 0px  #48c9b0;
+}
+.aboutme-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-flow: wrap;
+}
+
+.aboutme-image{
+    max-width: 400px;
+    height: 400px;
+    width: 100%;
+    background-image: url(./WhatsApp\ Image\ 2023-06-07\ at\ 09.46.11_412c7f87.jpg);
+    background-size: cover;
+    background-position: center;
+    
+}
+.aboutme-text{
+    height: auto;
+    width: 40%;
+    margin-left: 4%;
+    text-align: left;
+}
+
+/* END About ME Section */
+/* Start Project Section */
+
+#projects{
+    padding: 5px ;
+    margin: 5% ;
+    width: 90%;
+    height: auto;
+    text-align: center;
+}
+.projects{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#projects h2{
+    color:white;
+}
+.bbc-project,
+.earth-project{
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    position: relative;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/The_Blue_Marble_%28remastered%29.jpg/580px-The_Blue_Marble_%28remastered%29.jpg);
+    margin: 20px;
+    background-size: cover;
+    background-position: center;
+}
+.bbc-project{
+    background-image: url(https://yt3.googleusercontent.com/y_esGAQOhX4rTpWvrALErAJlFbm_2TIVrvcVfcZny7TuA8dJZgOQcC6KRfd_J5hljFe-foYXj9U=s900-c-k-c0x00ffffff-no-rj);
+}
+.text{
+    position: absolute;
+    height: 55px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: white;
+    overflow: hidden;
+    transition: .2s;
+}
+.text:hover{
+    height: 170px;
+    transition: .2s;
+}
+
+.content{
+    color: #48c9b0;
+}
+.button{
+    border: 1px solid #48c9b0;
+    border-radius: 5px;
+    width: 160px;
+    margin-bottom: 100px;
+    padding: .25em 1em;
+    text-decoration: none;
+    color: #48c9b0;
+    transition: .3s;
+}
+.button:hover{
+    background-color: #48c9b0;
+    color: #fff;
+}
+/* END Project Section */
