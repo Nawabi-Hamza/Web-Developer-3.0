@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Changing Content</title>
+  </head>
+  <body>
+    <h1 id="text">Hello World</h1>
+    <button id="btn">Click To Change Above Text</button>
+
+    <script>
+      let flag = false;
+      function changeContent() {
+        if (!flag) {
+          document.getElementById("text").innerText =
+            "You Clicked the button and content changed";
+          flag = true;
+        } else {
+          document.getElementById("text").innerText =
+            "do not click again first refresh page";
+        }
+      }
+
+      document.getElementById("btn").onclick = changeContent;
+    </script>
+  </body>
+</html>

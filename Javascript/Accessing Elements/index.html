@@ -7,5 +7,16 @@
   </head>
   <body>
     <h1>Accessing Elements</h1>
+    <p id="par">Access By Id</p>
+    <p id="par1">Access By Id</p>
+    <p id="par2">Access By Id</p>
+
+    <script>
+      document.getElementById("par").innerHTML =
+        "<b>Welcome To Paragraph Inner HTML</b>";
+      document.getElementById("par1").innerText =
+        "<b>Welcome To Paragraph Inner Text</b>";
+      document.getElementById("par2").append(" <b>-Append Text</b>");
+    </script>
   </body>
 </html>
