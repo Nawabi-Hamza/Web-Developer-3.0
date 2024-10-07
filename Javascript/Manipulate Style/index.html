@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulateing Style With JS</title>
+  </head>
+  <body>
+    <p id="moreText">this is some text</p>
+    <button id="whiteColor">White Color</button>
+    <button id="blackBgColor">Black Background Color</button>
+    <button id="padding">Padding For Container</button>
+    <button id="size2em">2em Font Size</button>
+
+    <script>
+      function id(id) {
+        return document.getElementById(id);
+      }
+      const text = id("moreText");
+      text.onclick = function () {
+        this.style.backgroundColor = "white";
+        this.style.color = "black";
+        this.style.padding = "0";
+        this.style.fontSize = "1em";
+      };
+
+      id("whiteColor").onclick = function () {
+        if ((text.style.backgroundColor = "white"))
+          text.style.backgroundColor = "red";
+
+        text.style.color = "white";
+      };
+      id("blackBgColor").onclick = function () {
+        if ((text.style.color = "black")) text.style.color = "white";
+        text.style.backgroundColor = "black";
+      };
+      id("padding").onclick = function () {
+        text.style.padding = "1em 2em";
+      };
+      id("size2em").onclick = function () {
+        text.style.fontSize = "2em";
+      };
+    </script>
+  </body>
+</html>

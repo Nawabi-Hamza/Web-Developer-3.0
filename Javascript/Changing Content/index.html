@@ -8,21 +8,59 @@
   <body>
     <h1 id="text">Hello World</h1>
     <button id="btn">Click To Change Above Text</button>
+    <p id="second">Javascript</p>
+    <button id="btn2">Second Button</button>
+
+    <p id="thrid">Append</p>
+    <button id="btn3">click Button</button>
+
+    <button id="btn4">Change Me</button>
 
     <script>
       let flag = false;
+      function idSelector(id) {
+        return document.getElementById(id);
+      }
       function changeContent() {
         if (!flag) {
-          document.getElementById("text").innerText =
+          idSelector("text").innerText =
             "You Clicked the button and content changed";
           flag = true;
         } else {
-          document.getElementById("text").innerText =
+          idSelector("text").innerText =
             "do not click again first refresh page";
         }
       }
 
-      document.getElementById("btn").onclick = changeContent;
+      // document.getElementById("btn").onclick = changeContent;
+      idSelector("btn").onclick = changeContent;
+
+      idSelector("btn2").onclick = function () {
+        idSelector("second").innerHTML = "<b>Javascript text changed</b>";
+      };
+
+      idSelector("btn3").onclick = function () {
+        let p = document.createElement("p");
+        p.innerText = " paragraph ";
+        console.log(p);
+        idSelector("thrid").append(p);
+      };
+
+      idSelector("btn4").onclick = function () {
+        // idSelector("btn4").style.backgroundColor = "blue";
+        this.style.backgroundColor = "red";
+      };
+
+      function log(...content) {
+        let text = "";
+        for (let key of content) {
+          text += key;
+        }
+        return console.log(text);
+      }
+      log("My Website");
+      log(2 + 3);
+      log("HTML ", "5", "2008", 3 + 43);
     </script>
   </body>
 </html>
