@@ -3,15 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Learning Web 3.0</title>
+    <style>
+      body{
+        cursor: url(/JQuery/cursors/icons8-cursor.png),auto;
+      }
+      .box{
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background-color: brown;
+        position: absolute;
+        z-index: 1000; /* Ensures it's in front of other elements */
+        /* cursor: none; */
+      }
+      a{
+        text-decoration: none;
+      }
+      code{
+        background-color: #33333321;
+        padding: .25em .25em;
+        border-radius: .3em;
+        display: block;
+        font-size: 2em;
+        width: max-content;
+        margin: .5em 0;
+        color: black;
+        font-weight: 800;
+      }
+      
+    </style>
   </head>
   <body>
-    <h1 style="color: #f00">Learning Files And Codes</h1>
     <h1 style="color: #333">Learning Files And Codes</h1>
     <hr>
-    <h1 style="color: #333">HTML</h1>
-    <h1 style="color: #333">CSS</h1>
-    <h1 style="color: #333">JavaScript</h1>
-    <h1 style="color: #333">JQuery</h1>
+    <a href="/HTML 5/index.html"><code>HTML</code></a>
+    <a href="/CSS 3/portfolio-first/index.html"><code>CSS</code></a>
+    <a href="/Javascript/Accessing Elements/index.html"><code>JavaScript</code></a>
+    <a href="/JQuery/1-jquery.html"><code>JQuery</code></a>
+    <div class="box"></div>
   </body>
+
+
+  <script>
+    document.addEventListener('mousemove',(e)=>{
+      
+      $(".box").css({
+        left: e.clientX+18,
+        top: e.clientY+13,
+      })
+    })
+  </script>
 </html>

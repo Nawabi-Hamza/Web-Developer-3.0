@@ -25,22 +25,40 @@
             flex-wrap: wrap;
         }
         #circle,
+        #circle2,
+        .square2,
         .square{
             width:200px;
             height:200px;
-            background-color: brown;
         }
+        #circle2,
         #circle{
             border-radius: 50%;
+            background-color: brown;
+        }
+        .square2{
+            background-color: chocolate;
+        }
+        .square:nth-of-type(1n){
             background-color: cadetblue;
         }
-        .square:nth-of-type(3n){
+        .square:nth-of-type(2n){
             background-color: burlywood;
         }
-
+        body{
+            /* cursor: url(./cursor.png), auto; */
+            /* cursor: url(./cursor.cur), auto; */
+            /* cursor: url(./icons8-cursor.cur) ,auto; */
+            cursor: url(./cursors/icons8-cursor.png) ,auto;
+           
+        }
+        p{
+            cursor: url(./cursors/cursor.cur) ,auto;
+        }
     </style>
 </head>
 <body>
+    
     <div class="container">
         <h1 class="heading" name="h1">Hi There JQuery !</h1>
     </div>
@@ -154,12 +172,38 @@
         })
     </script>
     <hr>
-    <div class="container">
+
+
+    <div class="container animating">
         <h1>Animating Content</h1>
     </div>
+    <div class="container">
+        <div id="circle2"></div><br>
+        <div class="square2"></div>
+    </div>
+
 
     <script>
-        
+        $("#circle2").click(function(){
+            $(this).animate({ 
+                width: "+=40px" ,
+                height: "+=40px",
+                backgroundColor:"blue",
+                borderRadius:"-=5%"
+            }, 2000);
+        })
+        let num = 25;
+        $(".square2").click(function(){
+            console.log(num)
+            if(num == 75) num = 0;
+            
+            $(this).animate({
+                borderRadius:`${num}%`
+            },1000)
+            
+            num += 25;
+        })
+   
     </script>
 </body>
 </html>
