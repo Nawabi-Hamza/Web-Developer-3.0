@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="./jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            padding:1em;
+            max-width: 1200px;
+        }
+        .shapes{
+            width: 100vw;
+            padding: 1em;
+            display: flex;
+            gap: 1em;
+            justify-content: space-around;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+        #circle,
+        .square{
+            width:200px;
+            height:200px;
+            background-color: brown;
+        }
+        #circle{
+            border-radius: 50%;
+            background-color: cadetblue;
+        }
+        .square:nth-of-type(3n){
+            background-color: burlywood;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading" name="h1">Hi There JQuery !</h1>
+    </div>
+
+
+
+
+    <div class="shapes">
+        <div id="circle"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+
+
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit inventore exercitationem fugiat laudantium perspiciatis. Earum itaque similique qui quas nemo, ipsa repellendus laboriosam velit dicta aliquid rerum error architecto maxime.</p>
+        <button>Click Me</button>
+    </div>
+
+
+
+
+    <!-- Check Connection With JQuery -->
+    <script type="text">
+        if(typeof jQuery == "undefined"){
+            console.error("jQuery is not installed please install jQuery....")
+        }else{
+            console.log("JQuery Installed Correctly")
+        }
+    </script>
+    <!-- Selector in JQuery -->
+    <script type="text">
+        $("h1").hover(function(){
+            alert("heading 1 hovered")
+        })
+        $("#circle").click(function(){
+            alert("Welcome to circle")
+        })
+        $(".square").click(function(){
+            alert("Square Clicked")
+            this.style.backgroundColor = "orangered"
+        })
+    </script>
+    <!-- Change Content With click on circle shape -->
+    <script type="text">
+        $("#circle").click(function(){
+            $("h1").html("Heading Changed With circle clicked")
+        })
+    </script>
+    <!-- Change CSS Style -->
+    <script type="text">
+        $("#circle").click(function(){
+            console.log($(this).css("background-color"))
+            $(this).css("background-color","skyblue")
+        })
+    
+        console.log($("body").css("width"))
+    
+        $("#circle").click(function(){
+            $(this).css("display","none")
+        })
+        $(".square").click(function(){
+            $(this).css("display","none")
+        })
+    </script>
+    <!-- Check attributes -->
+    <script>
+        $("div").click(function(){
+            let log = $(this).attr("id")
+            if(log == "circle"){
+                console.log(log)
+            }
+        })
+
+        $("h1").click(function(){
+            let log = $(this).attr("class")
+            if(log == "heading"){
+                console.log(log)
+                console.log($(this).attr("name"))
+            }
+
+        })
+    </script>
+    <!-- Fade and using callback function -->
+    <script type="text">
+        $("#circle").click(function(){
+            $(this).hide()
+        })
+        $(".square").click(function(){
+            $(this).fadeOut("slow",function(){
+                $(this).fadeIn("slow")
+            })
+        })
+    </script>
+    <script>
+        // =================first strategy=================
+        
+        // $("button").click(function(){
+        //     if($("p").css("display")=="none"){
+        //         $("p").fadeIn("slow")
+        //     }else{
+        //         $("p").fadeOut("slow")
+        //     }
+        // })
+        // =================second strategy=================
+        $("button").click(function(){
+    
+                $("p").toggle("slow")
+           
+        })
+
+
+
+    </script>
+    
+</body>
+</html>
