@@ -87,7 +87,7 @@
     <!-- Change Content With click on circle shape -->
     <script type="text">
         $("#circle").click(function(){
-            $("h1").html("Heading Changed With circle clicked")
+            $("h1").html("Heading Changed With <mark>circle</mark> clicked")
         })
     </script>
     <!-- Change CSS Style -->
@@ -107,7 +107,7 @@
         })
     </script>
     <!-- Check attributes -->
-    <script>
+    <script type="text">
         $("div").click(function(){
             let log = $(this).attr("id")
             if(log == "circle"){
@@ -135,7 +135,8 @@
             })
         })
     </script>
-    <script>
+    <!-- Toggle Button Show And Hide Element -->
+    <script type="text">
         // =================first strategy=================
         
         // $("button").click(function(){
@@ -151,10 +152,14 @@
                 $("p").toggle("slow")
            
         })
-
-
-
     </script>
-    
+    <hr>
+    <div class="container">
+        <h1>Animating Content</h1>
+    </div>
+
+    <script>
+        
+    </script>
 </body>
 </html>
