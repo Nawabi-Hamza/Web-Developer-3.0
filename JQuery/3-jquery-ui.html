@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery UI</title>
+	<link href="jquery-ui-1.14.0/jquery-ui.css" rel="stylesheet">
+    <script src="./jquery.min.js"></script>
+    <script src="jquery-ui-1.14.0/jquery-ui.js"></script>
+
+    <style>
+        #draggable,#resizable,#also { width: 100px; height: 100px; padding: 0.5em;background-color: chocolate; text-align: center; }
+        .container { width:95vw; border: 1px solid goldenrod; margin:auto;position: relative;overflow: auto;  height: 300px;padding:1em;box-sizing: border-box; }
+        
+        #dropable,#drop{
+            height: 100px;
+            width:100px;
+            background-color: rgb(66, 193, 212);
+            margin: 1em;
+        }
+        #drop{
+            height: 80px;
+            width:80px;
+        }
+        body{
+            margin-bottom: 10em;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            width: max-content;
+        }
+       
+        ul li{
+            padding: .5em 1em;
+            margin: 1em;
+        }
+    </style>
+ 
+</head>
+<body>
+
+    <h1>JQuery UI</h1>
+
+    <h1>Draggable</h1>
+    <div class="container">
+        <div id="draggable" class="ui-widget-content">
+            <p>Drag me around</p>
+        </div>
+    </div>
+
+    <h1>Resizable</h1>
+    <div id="resizable"  class="ui-widget-content">contnet</div>
+    <div id="also"  class="ui-widget-content">contnet</div>
+
+    <h1>Dropable</h1>
+    <div class="container">
+        <div id="dropable"><p>drop target</p></div>
+        <div id="drop"><p>drag me</p></div>
+    </div>
+         
+    <script>
+        // Draggable
+        $( "#draggable" ).draggable({ axis:'y' });
+        $(".container").draggable({ containment:"parent"})
+        // Resize
+        $('#resizable').resizable({ 
+            grid:50,
+            alsoResize:"#also",
+            maxHeight:250,
+            maxWidth:500,
+            minHeight:100,
+            minWidth:200,
+            resize: function(e,ui){
+                if($("#resizable").width() > 400){
+                    alert("It is enough !")
+                }
+            }
+         })
+        //  DROPABLE
+        let num = 0;
+        $( "#drop" ).draggable();
+        $( "#dropable" ).droppable({
+            drop: function( event, ui ) {
+                num += 1;
+                $( this )
+                .css("background-color","white")
+                .addClass("ui-state-highlight")
+                .find( "p" )
+                .html( `Dropped ${num} !` );
+                console.log("Dropped in target!")
+                console.log(event)
+            },
+        });
+
+    </script>
+
+    <h1>Accordien</h1>
+    <div id="accordion">
+        <h2 style="background-color: burlywood;border:none;">Section 1</h2>
+        <div>
+          <p>
+          Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+          ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+          amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+          odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+          </p>
+        </div>
+        <h3>Section 2</h3>
+        <div>
+          <p>
+          Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+          purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+          velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+          suscipit faucibus urna.
+          </p>
+        </div>
+        <h3>Section 3</h3>
+        <div>
+          <p>
+          Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+          Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+          ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+          lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+          </p>
+          <ul>
+            <li>List item one</li>
+            <li>List item two</li>
+            <li>List item three</li>
+          </ul>
+        </div>
+        <h3>Section 4</h3>
+        <div>
+          <p>
+          Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+          et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+          faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+          mauris vel est.
+          </p>
+        </div>
+    </div>
+    <script>
+        $("#accordion").accordion()
+    </script>
+
+    <h1>Sortable</h1>
+    <p>move one of item</p>
+    <div class="container">
+        <ul id="sortable"> 
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Sort These Lists</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>item 1</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>item 2</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>item 3</li>
+            <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>item 4</li>
+        </ul>
+    </div>
+
+    <script>
+        $("#sortable").sortable()
+    </script>
+
+    <h1>Another widgets</h1>
+    <div class="container">
+        Date: <input type="text" id="datepick">
+        <div id="dialog" title="Basic dialog">
+            <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+        </div>
+        <div id="progressbar"></div>
+    </div>
+    <script>
+        $("#datepick").datepicker()
+        $("#dialog").dialog()
+        $("#progressbar").progressbar({ value:34,})
+
+    </script>
+
+    <a href="../Bootstrap/index.html"><button style="font-size: 2em;">NEXT ----------------&gt;</button></a>
+
+</body>
+</html>
