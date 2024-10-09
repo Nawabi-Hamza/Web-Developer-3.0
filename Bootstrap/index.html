@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.simple-form-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+                }, false)
+            })
+            })()
+    </script>
+    <title>Bootstrap</title>
+</head>
+<body>
+    <div class="container ">
+        <h1>Buttons</h1>
+        <div class="d-flex gap-3 justify-content-center mb-4 flex-wrap">
+            <button class="btn btn-primary">Button</button>
+            <button class="btn btn-secondary">Button</button>
+            <button class="btn btn-danger">Button</button>
+            <button class="btn btn-success">Button</button>
+            <button class="btn btn-warning">Button</button>
+            <button class="btn btn-info">Button</button>
+            <button class="btn btn-dark">Button</button>
+        </div>
+        <div class="d-flex gap-3 justify-content-center mb-4 flex-wrap">
+            <button class="btn btn-outline-primary">Button</button>
+            <button class="btn btn-outline-secondary">Button</button>
+            <button class="btn btn-outline-danger">Button</button>
+            <button class="btn btn-outline-success">Button</button>
+            <button class="btn btn-outline-warning">Button</button>
+            <button class="btn btn-outline-info">Button</button>
+            <button class="btn btn-outline-dark">Button</button>
+        </div>
+        <hr>
+    </div>
+    <div class="container ">
+        <h1>Background Colors</h1>
+        <div class="mb-4 d-flex">
+            <div class="bg-primary w-25 p-2"></div>
+            <div class="bg-secondary w-25 p-2"></div>
+            <div class="bg-danger w-25 p-2"></div>
+            <div class="bg-success w-25 p-2"></div>
+            <div class="bg-warning w-25 p-2"></div>
+            <div class="bg-info w-25 p-2"></div>
+            <div class="bg-light w-25 p-2"></div>
+            <div class="bg-dark w-25 p-2"></div>
+        </div>
+        <hr>
+    </div>
+    <div class="container mb-4">
+        <h1>Text Colors</h1>
+        <span class="text-primary">text-primary</span>
+        <span class="text-secondary">text-secondary</span>
+        <span class="text-dark">text-dark</span>
+        <span class="text-white bg-dark">text-white</span>
+        <span class="text-danger">text-danger</span>
+        <span class="text-info">text-info</span>
+        <span class="text-warning">text-warning</span>
+        <span class="text-light bg-dark">text-light</span>
+        <span class="text-muted">text-muted</span>
+        <hr>
+    </div>
+    <div class="container">
+        <h1>Welcome</h1>
+        <div class="row">
+            <p class="col-lg-6 border p-3">
+                <b>1</b>, ipsum dolor sit amet consectetur adipisicing elit. Inventore error eaque illo voluptatibus ipsa, explicabo reiciendis laboriosam dolorum earum quae et soluta accusamus consequuntur. Facere quo vitae quod! Perferendis, commodi!
+            </p>
+            <p class="col-md-6 border p-3">
+                <b>2</b>, ipsum dolor sit amet consectetur adipisicing elit. Inventore error eaque illo voluptatibus ipsa, explicabo reiciendis laboriosam dolorum earum quae et soluta accusamus consequuntur. Facere quo vitae quod! Perferendis, commodi!
+            </p>
+            <p class="col-md-6 border p-3">
+                <b>3</b>, ipsum dolor sit amet consectetur adipisicing elit. Inventore error eaque illo voluptatibus ipsa, explicabo reiciendis laboriosam dolorum earum quae et soluta accusamus consequuntur. Facere quo vitae quod! Perferendis, commodi!
+            </p>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <h1>Basic Grid</h1>
+        <div class="row text-center">
+            <div class="col border">1,1</div>
+            <div class="col border">1,2</div>
+        </div>
+        <h1>Column Span</h1>
+        <div class="row text-center">
+            <div class="col-9 border">1,1</div>
+            <div class="col-3 border">1,2</div>
+        </div>
+        <div class="row text-center">
+            <div class="col-3 border">1,1</div>
+            <div class="col-9 border">1,2</div>
+        </div>
+        <h1>Adding Responsiveness</h1>
+        <div class="row text-center">
+            <div class="col-sm-6 col-md-3 border">1,1</div>
+            <div class="col-sm-6 col-md-3 border">1,2</div>
+            <div class="col-sm-6 col-md-3 border">1,3</div>
+            <div class="col-sm-6 col-md-3 border">1,4</div>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-6 col-md-3 col-lg-2 border">2,1</div>
+            <div class="col-sm-6 col-md-3 col-lg-2 border">2,2</div>
+            <div class="col-sm-6 col-md-3 col-lg-2 border">2,3</div>
+            <div class="col-sm-6 col-md-3 col-lg-2 border">2,4</div>
+        </div>
+        <hr>
+    </div>
+    <div class="container">
+        <h1>Align Items</h1>
+        <div class="row text-center align-items-center">
+            <div class="col-sm p-2 border">
+                First Column
+            </div>
+            <div class="col-sm p-2 border">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur possimus magnam nemo inventore atque temporibus qui! Hic architecto, amet accusantium harum explicabo molestias esse, expedita qui culpa incidunt numquam repellat.
+            </div>
+            <div class="col-sm p-2 border">
+                Second Column
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container sticky-top">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Test</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Courses</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Support
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </div>
+    <div class="container">
+        <p class="lead">
+            Lorem ipsum, dolor sit amet consectetur adipisicing eem adipisci consequatur placeat corrupti odio voluptatum quisquam. Accusamus nobis tempora vitae est modi illo aut inventore aliquid ratione aspernatur, quia iusto. Adipisci natus laudantium dicta minima consectetur?
+        </p>
+        <form class="w-50 m-auto simple-form-validation" novalidate>
+            <h1>Simple Form</h1>
+            <div>
+                <label class="form-label" for="email">Email address</label>
+                <input type="email" class="form-control" id="email" requried>
+                <div class="invalid-feedback">please type your email</div>
+                <div class="valid-feedback">Correct !</div>
+            </div>
+            <div>
+                <label class="form-label" for="password">Password</label>
+                <input type="password" class="form-control" id="password" requried>
+            </div>
+            <button type="submit" class="btn btn-outline-warning">Submit Form</button>
+        </form>
+        <form action="" class="w-50 m-auto ">
+            <h1>Floating form</h1>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email">
+                <label class="form-label" for="email">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="password">
+                <label class="form-label" for="password">Password</label>
+            </div>
+        </form>
+    </div>
+
+    <!-- =============================================== -->
+   <div class="container">
+        <div class="p-5 bg-light rounded-3">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic quisquam iste at corrupti quidem aperiam consequatur esse dolore deleniti cumque!
+        </div>
+   </div>
+
+
+   <div class="container">
+     <h1>Model</h1>
+     <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2>Model Title</h2>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti amet ut reprehenderit hic vero facere voluptas nam asperiores provident voluptatibus architecto, voluptatum non in nemo animi illo nihil sed nisi!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+   </div>
+
+   <div class="container" >
+    <h1>ScrollSpy</h1>
+    <nav id="navbar-example2" class="navbar sticky-top bg-body-tertiary px-3 mb-3">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading1">First</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#scrollspyHeading2">Second</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+              <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div data-bs-spy="scroll"  data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+    <h4 id="scrollspyHeading1">First heading</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore officia eaque libero. Omnis soluta molestiae suscipit minima et sapiente. Qui, nesciunt exercitationem fuga quaerat maiores obcaecati in totam blanditiis eos error earum doloremque deserunt molestias odio fugit vero! Unde distinctio voluptates deleniti voluptatem molestiae alias soluta, praesentium numquam dolorum facere veritatis placeat cupiditate labore, atque fugiat commodi quas illo repellendus rerum ducimus quis incidunt tempora odio! Provident sapiente esse doloribus, sunt alias vero consectetur, quaerat pariatur ut eveniet animi rerum ea ab tempore quasi inventore, adipisci corporis aliquid fugiat eligendi qui distinctio tenetur optio. Ab asperiores illum enim a amet.</p>
+        <h4 id="scrollspyHeading2">Second heading</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore officia eaque libero. Omnis soluta molestiae suscipit minima et sapiente. Qui, nesciunt exercitationem fuga quaerat maiores obcaecati in totam blanditiis eos error earum doloremque deserunt molestias odio fugit vero! Unde distinctio voluptates deleniti voluptatem molestiae alias soluta, praesentium numquam dolorum facere veritatis placeat cupiditate labore, atque fugiat commodi quas illo repellendus rerum ducimus quis incidunt tempora odio! Provident sapiente esse doloribus, sunt alias vero consectetur, quaerat pariatur ut eveniet animi rerum ea ab tempore quasi inventore, adipisci corporis aliquid fugiat eligendi qui distinctio tenetur optio. Ab asperiores illum enim a amet.</p>
+        <h4 id="scrollspyHeading3">Third heading</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore officia eaque libero. Omnis soluta molestiae suscipit minima et sapiente. Qui, nesciunt exercitationem fuga quaerat maiores obcaecati in totam blanditiis eos error earum doloremque deserunt molestias odio fugit vero! Unde distinctio voluptates deleniti voluptatem molestiae alias soluta, praesentium numquam dolorum facere veritatis placeat cupiditate labore, atque fugiat commodi quas illo repellendus rerum ducimus quis incidunt tempora odio! Provident sapiente esse doloribus, sunt alias vero consectetur, quaerat pariatur ut eveniet animi rerum ea ab tempore quasi inventore, adipisci corporis aliquid fugiat eligendi qui distinctio tenetur optio. Ab asperiores illum enim a amet.</p>
+        <h4 id="scrollspyHeading4">Fourth heading</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore officia eaque libero. Omnis soluta molestiae suscipit minima et sapiente. Qui, nesciunt exercitationem fuga quaerat maiores obcaecati in totam blanditiis eos error earum doloremque deserunt molestias odio fugit vero! Unde distinctio voluptates deleniti voluptatem molestiae alias soluta, praesentium numquam dolorum facere veritatis placeat cupiditate labore, atque fugiat commodi quas illo repellendus rerum ducimus quis incidunt tempora odio! Provident sapiente esse doloribus, sunt alias vero consectetur, quaerat pariatur ut eveniet animi rerum ea ab tempore quasi inventore, adipisci corporis aliquid fugiat eligendi qui distinctio tenetur optio. Ab asperiores illum enim a amet.</p>
+        <h4 id="scrollspyHeading5">Fifth heading</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore officia eaque libero. Omnis soluta molestiae suscipit minima et sapiente. Qui, nesciunt exercitationem fuga quaerat maiores obcaecati in totam blanditiis eos error earum doloremque deserunt molestias odio fugit vero! Unde distinctio voluptates deleniti voluptatem molestiae alias soluta, praesentium numquam dolorum facere veritatis placeat cupiditate labore, atque fugiat commodi quas illo repellendus rerum ducimus quis incidunt tempora odio! Provident sapiente esse doloribus, sunt alias vero consectetur, quaerat pariatur ut eveniet animi rerum ea ab tempore quasi inventore, adipisci corporis aliquid fugiat eligendi qui distinctio tenetur optio. Ab asperiores illum enim a amet.</p>
+      </div>
+   </div>
+
+   <a href="./landing-page.html"><button style="font-size: 2em;">NEXT ----------------&gt;</button></a>
+
+    <br><br><br><br><br><br><br>
+</body>
+</html>
